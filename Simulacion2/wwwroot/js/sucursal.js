@@ -5,6 +5,15 @@ window.onload = function () {
 
 let objSucursal;
 
+function filtrarSucursal() {
+    let nombre = get("txtFiltrarTipoMedicamento");
+    if (nombre == "") {
+        listarSucursal();
+    } else {
+        objSucursal.url = "Sucursal/filtrarSucursal/?nombre=" + nombre;
+        pintar(objSucursal, "divTabla2")
+    }
+}
 
 
 async function listarSucursal() {
@@ -19,16 +28,16 @@ async function listarSucursal() {
 
 function buscar() {
 
-    let nombreTipoMedicamento = document.getElementById("txtFiltrarTipoMedicamento").value;
+    let nombreTipoMedicamento = get("txtFiltrarTipoMedicamento");//document.getElementById("txtFiltrarTipoMedicamento").value;
 
     objSucursal.url = "Sucursal/filtrarSucursal/?nombre=" + nombreTipoMedicamento;
-    pintar(objSucursal, "divTabla2")
+    pintar(objSucursal, "divTabla2");
 
 
 }
 
 function limpiar() {
     listarSucursal();
-    document.getElementById("txtFiltrarTipoMedicamento").value = "";
+    set("txtFiltrarTipoMedicamento", "");//document.getElementById("txtFiltrarTipoMedicamento").value = "";
 }
 

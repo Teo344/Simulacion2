@@ -3,6 +3,17 @@
 };
 
 let objTipoMedicamento;
+function filtrarTipoMedicamento() {
+    let nombre = get("txtFiltrarTipoMedicamento");
+    if (nombre == "") {
+        listarTipoMedicamento();
+    } else {
+        objTipoMedicamento.url = "TipoMedicamento/filtrarTipoMedicamento/?nombre=" + nombre;
+        pintar(objTipoMedicamento, "divTabla")
+    }
+}
+
+
 
 
 
@@ -18,7 +29,7 @@ async function listarTipoMedicamento() {
 
 function buscar() {
 
-    let nombreTipoMedicamento = document.getElementById("txtFiltrarTipoMedicamento").value;
+    let nombreTipoMedicamento = get("txtFiltrarTipoMedicamento"); // document.getElementById("txtFiltrarTipoMedicamento").value;
 
     objTipoMedicamento.url = "TipoMedicamento/filtrarTipoMedicamento/?nombre=" + nombreTipoMedicamento;
     pintar(objTipoMedicamento,"divTabla")
@@ -28,6 +39,5 @@ function buscar() {
 
 function limpiar() {
     listarTipoMedicamento();
-    document.getElementById("txtFiltrarTipoMedicamento").value = "";
+    set("txtFiltrarTipoMedicamento" , "")
 }
-

@@ -1,0 +1,42 @@
+﻿@{
+	ViewData["Title"] = "Index";
+}
+
+
+
+
+<h1>Lista de Laboratorios</h1>
+
+
+
+<div class="container mt-4">
+    <fieldset class="p-4 border rounded shadow-sm">
+        <legend class="text-primary fw-bold">Buscar Laboratorio</legend>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="nombre" class="form-label">Nombre</label>
+                <input type="text" class="form-control" id="nombre">
+            </div>
+            <div class="col-md-6">
+                <label for="direccion" class="form-label">Dirección</label>
+                <input type="text" class="form-control" id="direccion">
+            </div>
+            <div class="col-12">
+                <label for="personaContacto" class="form-label">Persona de Contacto</label>
+                <input type="text" class="form-control" id="personaContacto" placeholder="Ingrese aquí">
+            </div>
+            <div class="col-12 d-flex justify-content-end gap-2 mt-3">
+                <button  class="btn btn-primary" onclick="buscar()">Buscar</button>
+                <button  class="btn btn-secondary">Limpiar</button>
+            </div>
+        </form>
+    </fieldset>
+</div>
+
+
+
+<div id="divTablaLaboratorios">
+</div>
+
+<script src="~/js/generic.js"></script>
+<script src="~/js/laboratorio.js"></script>

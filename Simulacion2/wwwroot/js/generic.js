@@ -1,4 +1,12 @@
-﻿async function fetchget(url, tiporespuesta, callback) {
+﻿function get(idControl) {
+    return document.getElementById(idControl).value;
+}
+
+function set(idControl, valor) {
+    document.getElementById(idControl).value = valor;
+}
+
+async function fetchget(url, tiporespuesta, callback) {
     try {
 
         let raiz = document.getElementById("hdfoculto").value;
